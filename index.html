@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 Year Anniversary 💙</title>
+
+<style>
+/* ===== เพิ่ม: หน้าล็อกรหัส ===== */
+#lock{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:linear-gradient(135deg,#c9bfff,#9b8cff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.lock-card{
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(30px);
+  border-radius:50px;
+  padding:50px 40px;
+  width:320px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 40px 120px rgba(0,0,0,.25);
+}
+
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin:20px 0;
+}
+
+.dot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:rgba(255,255,255,.4);
+}
+
+.dot.fill{background:#fff;}
+
+.heart-bar{
+  width:100%;
+  height:16px;
+  background:rgba(255,255,255,.35);
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.heart-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#ff7bd5,#b28cff);
+  transition:.35s ease;
+}
+
+.keypad{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.keypad button{
+  padding:16px;
+  font-size:18px;
+  border:none;
+  border-radius:20px;
+  background:rgba(255,255,255,.9);
+  color:#6a5acd;
+}
+
+/* ====== โค้ดเดิมของคุณ (ไม่แก้เลย) ====== */
+
+:root{
+  --bg1:#eef4ff;
+  --bg2:#dbe8ff;
+  --bg3:#e3dcff;
+  --deep:#4f5b82;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:"Segoe UI",system-ui,sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+  overflow:hidden;
+}
+
+.glow{
+  position:fixed;
+  width:520px;
+  height:520px;
+  background:radial-gradient(circle,rgba(160,190,255,.65),transparent 70%);
+  filter:blur(90px);
+  animation:move 26s infinite alternate ease-in-out;
+  z-index:0;
+}
+
+.g1{top:-220px;left:-200px;}
+.g2{bottom:-240px;right:-200px;animation-delay:6s;}
+
+@keyframes move{to{transform:translateY(160px);}}
+
+.bg{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+.float-img{
+  position:absolute;
+  bottom:-80px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  object-fit:cover;
+  opacity:.85;
+  animation:rise linear forwards;
+  box-shadow:0 6px 14px rgba(120,150,255,.35);
+}
+
+.floating{
+  position:absolute;
+  bottom:-60px;
+  font-size:18px;
+  animation:rise linear forwards;
+  opacity:.7;
+}
+
+@keyframes rise{
+  from{transform:translateY(0) scale(.9);opacity:0;}
+  20%{opacity:1;}
+  to{transform:translateY(-120vh) scale(1.15);opacity:0;}
+}
+
+#intro{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#9fc4ff,#b19cff);
+  z-index:50;
+  transition:1.2s ease;
+}
+
+.intro-card{
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(28px);
+  padding:90px 60px;
+  border-radius:60px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 40px 120px rgba(0,0,0,.25);
+}
+
+.intro-card h1{font-size:40px;margin-bottom:18px;}
+
+.intro-card button{
+  margin-top:46px;
+  padding:20px 70px;
+  border:none;
+  border-radius:50px;
+  font-size:18px;
+  cursor:pointer;
+  background:#fff;
+  color:#6a7dff;
+  box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+
+.main{
+  position:relative;
+  z-index:10;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1.2s ease;
+}
+
+.main.show{opacity:1;transform:none;}
+
+.card{
+  max-width:460px;
+  background:rgba(235,245,255,.9);
+  backdrop-filter:blur(30px);
+  border-radius:54px;
+  padding:52px 36px;
+  text-align:center;
+  box-shadow:0 45px 120px rgba(120,170,255,.35),0 0 40px rgba(180,210,255,.45);
+}
+
+.photo-wrap{width:200px;height:200px;margin:0 auto 28px;}
+.photo{width:100%;height:100%;border-radius:50%;overflow:hidden;border:7px solid #fff;}
+.photo img{width:100%;height:100%;object-fit:cover;}
+
+h2{font-size:32px;color:var(--deep);}
+.names{font-size:19px;color:#6a78a0;}
+
+.badge{
+  margin-top:16px;
+  padding:12px 28px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#9fc4ff,#b19cff);
+  color:#fff;
+  display:inline-block;
+  box-shadow:0 8px 20px rgba(120,140,255,.45);
+}
+
+#loveTime{
+  margin-top:18px;
+  font-size:14px;
+  color:#5a6a8f;
+  line-height:1.8;
+}
+
+.message{
+  margin-top:22px;
+  padding:18px 20px;
+  border-radius:20px;
+  background:#f1f6ff;
+  color:#4f5f88;
+  font-size:15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- หน้าใส่รหัส -->
+<div id="lock">
+  <div class="lock-card">
+    <h2>ใส่รหัสลับ 💜</h2>
+    <div class="dots">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="heart-bar"><div class="heart-fill" id="heartFill"></div></div>
+    <div class="keypad">
+      <button onclick="press(1)">1</button><button onclick="press(2)">2</button><button onclick="press(3)">3</button>
+      <button onclick="press(4)">4</button><button onclick="press(5)">5</button><button onclick="press(6)">6</button>
+      <button onclick="press(7)">7</button><button onclick="press(8)">8</button><button onclick="press(9)">9</button>
+      <button onclick="reset()">⌫</button><button onclick="press(0)">0</button><button onclick="reset()">✕</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ของเดิมทั้งหมด ===== -->
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+<div class="bg" id="bg"></div>
+
+<div id="intro">
+  <div class="intro-card">
+    <h1>สำหรับน้องโอปอนะจ๊ะ 💙</h1>
+    <button onclick="enter()">✨ เปิดสิ</button>
+  </div>
+</div>
+
+<div class="main" id="main">
+  <div class="card">
+    <div class="photo-wrap"><div class="photo"><img src="main.jpg"></div></div>
+    <h2>Happy Anniversary</h2>
+    <div class="names">เอิร์ท 🤍 น้องโอปอ</div>
+    <div class="badge">1Y • 08/02/25</div>
+    <div id="loveTime"></div>
+    <div class="message">เขียนอะไรดีน้าา 💙 สกีบีดี้ทอยเลต</div>
+  </div>
+</div>
+
+<script>
+const PASSWORD="080225";
+let input="";
+
+function press(n){
+  if(input.length>=PASSWORD.length)return;
+  input+=n;
+  document.querySelectorAll(".dot")[input.length-1].classList.add("fill");
+  heartFill.style.width=(input.length/PASSWORD.length*100)+"%";
+  if(input.length===PASSWORD.length){
+    if(input===PASSWORD){
+      lock.style.opacity=0;
+      setTimeout(()=>lock.remove(),600);
+    }else reset();
+  }
+}
+
+function reset(){
+  input="";
+  document.querySelectorAll(".dot").forEach(d=>d.classList.remove("fill"));
+  heartFill.style.width="0%";
+}
+
+function enter(){
+  intro.style.opacity=0;
+  setTimeout(()=>{
+    intro.style.display="none";
+    main.classList.add("show");
+  },1200);
+}
+</script>
+
+</body>
+</html>
